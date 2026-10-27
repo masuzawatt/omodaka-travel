@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>07｜中部高地の縄文世界に浸る｜OMODAKA</title>
+    <style>
+        :root {
+            --bg: #0b0f0e;
+            --bg2: #111715;
+            --card: #fff;
+            --ink: #17201d;
+            --muted: #d9e0dc;
+            --line: #2a3531;
+            --gold: #c58a3a;
+            --gold2: #e0ad63;
+            --white: #fff
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+            color: var(--muted);
+            background: var(--bg);
+            line-height: 1.8
+        }
+
+        a {
+            color: inherit
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: auto;
+            padding: 0 22px
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(8, 11, 10, .94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #26302c;
+            z-index: 5;
+            color: #fff
+        }
+
+        nav {
+            height: 66px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .brand {
+            font-weight: 700;
+            letter-spacing: .16em
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 18px;
+            font-size: 14px
+        }
+
+        .navlinks a {
+            text-decoration: underline;
+            text-underline-offset: 3px
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 92px 0 0;
+            background: #101614;
+            --hero-photo: url('https://upload.wikimedia.org/wikipedia/commons/9/99/2025-03-29_Jomon_Venus.jpg');
+            background-image: linear-gradient(90deg, rgba(5, 8, 7, .62) 0%, rgba(5, 8, 7, .44) 42%, rgba(5, 8, 7, .22) 100%), var(--hero-photo);
+            background-size: auto 112%;
+            background-position: 78% center;
+            background-repeat: no-repeat;
+            box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .08)
+        }
+
+        .eyebrow {
+            letter-spacing: .18em;
+            font-size: 12px;
+            color: #fff
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 6vw, 64px);
+            line-height: 1.12;
+            margin: 8px 0;
+            color: #fff
+        }
+
+        .lead {
+            font-size: 19px;
+            max-width: 800px;
+            color: #fff
+        }
+
+        .lead strong {
+            color: #fff
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 9px 17px;
+            border: 1px solid #fff;
+            border-radius: 999px;
+            text-decoration: none;
+            margin-top: 8px;
+            color: #fff;
+            background: rgba(0, 0, 0, .18)
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #111
+        }
+
+        section {
+            padding: 58px 0
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin: 0 0 8px;
+            color: #fff
+        }
+
+        .section-lead {
+            max-width: 800px;
+            margin-bottom: 25px;
+            color: #d9e0dc
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .card,
+        .detail {
+            background: var(--card);
+            color: var(--ink);
+            border: 1px solid #e3e0d8;
+            border-radius: 15px;
+            padding: 21px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .25)
+        }
+
+        .card h3,
+        .detail h3 {
+            margin: 4px 0 8px;
+            color: var(--ink)
+        }
+
+        .detail {
+            margin-bottom: 18px
+        }
+
+        .detail p {
+            color: #28332f
+        }
+
+        .meta {
+            font-size: 13px;
+            color: #5c6863 !important
+        }
+
+        .source {
+            font-size: 18px;
+            color: #79521f !important;
+            font-weight: 700;
+            margin-top: 14px
+        }
+
+        .source a {
+            color: #8b5e20;
+            text-decoration: underline;
+            text-underline-offset: 3px
+        }
+
+        .route {
+            background: #161d1a;
+            border: 1px solid #303b36;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+            color: #fff
+        }
+
+        .route strong {
+            color: #fff
+        }
+
+        .num {
+            color: var(--gold2);
+            letter-spacing: .14em;
+            font-size: 12px
+        }
+
+        .back {
+            margin: 25px 0
+        }
+
+        .photo {
+            display: none
+        }
+
+        .section-title:before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 1.05em;
+            background: var(--gold);
+            margin-right: 12px;
+            vertical-align: -.12em;
+            border-radius: 3px
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #26302c;
+            color: #9ba7a1;
+            font-size: 12px;
+            background: #080b0a
+        }
+
+        footer .wrap {
+            color: #9ba7a1
+        }
+
+        @media(max-width:800px) {
+
+            .grid,
+            .detail-grid {
+                grid-template-columns: 1fr
+            }
+
+            .navlinks {
+                display: none
+            }
+
+            .hero {
+                padding: 60px 0 55px;
+                background-image: linear-gradient(180deg, rgba(5, 8, 7, .60), rgba(5, 8, 7, .40)), var(--hero-photo);
+                background-size: auto 100%;
+                background-position: 85% center;
+                background-repeat: no-repeat
+            }
+
+            .lead {
+                font-size: 17px
+            }
+
+            .section-title {
+                font-size: 26px
+            }
+        }
+    
+/* Travel category navigation */
+.travel-category-nav{padding:12px 0 46px;background:#111715;border-top:1px solid #26302c}
+.travel-category-nav .nav-title{margin:0 0 18px;text-align:center;color:#fff;font-size:20px;letter-spacing:.08em}
+.travel-category-nav .nav-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.travel-category-nav .nav-item{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 16px;border:1px solid #5a5142;border-radius:999px;background:#1a211e;color:#f1eee7;text-decoration:none;font-size:14px;line-height:1.35;transition:background .2s,border-color .2s,transform .2s}
+.travel-category-nav .nav-item:hover{background:#c58a3a;border-color:#c58a3a;color:#111;transform:translateY(-1px)}
+.travel-category-nav .nav-item.current{background:#c58a3a;border-color:#c58a3a;color:#111;font-weight:700}
+.travel-category-nav .nav-home{display:inline-block;margin-top:12px;padding:9px 18px;border:1px solid #8b806e;border-radius:999px;color:#fff;text-decoration:none;font-size:13px}
+.travel-category-nav .nav-home:hover{background:#fff;color:#111}
+@media(max-width:800px){.travel-category-nav{padding:10px 0 38px}.travel-category-nav .nav-grid{gap:8px}.travel-category-nav .nav-item{font-size:13px;padding:8px 13px}.travel-category-nav .nav-title{font-size:18px}}
+
+/* Category navigation spacing adjustment */
+.travel-category-nav {
+    padding-top: 0;
+}
+/* Add spacing between the introductory content and the upper navigation block. */
+.hero + .travel-category-nav {
+    margin-top: 20px;
+}
+main + .travel-category-nav {
+    margin-top: -58px;
+}
+</style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <nav>
+                <div class="brand">OMODAKA</div>
+
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <div class="eyebrow">旅するOMODAKA</div>
+                <h1>07｜中部高地の縄文世界に浸る</h1>
+                <p class="lead">八ヶ岳山麓を中心とする中部高地は、「縄文銀座」と称されるほど、縄文文明が栄えた地域です。その背景の一つとして、和田峠や八ヶ岳山麓が黒曜石の一大産地であったことが挙げられます。中部高地で産出した黒曜石は東日本各地へ広く流通し、縄文人によって鏃（やじり）やナイフなどの石器として利用されました。中部高地では、精緻で芸術性の高い縄文土器や土偶が数多く出土しています。なかでも、尖石縄文考古館の国宝2体「縄文のビーナス」「仮面の女神」、井戸尻考古館の「神像筒型土器」「釣手形土器（縄文のメドゥーサ）」、岡谷美術考古館の「壺を持つ妊婦土偶」などは、ぜひ実際に見ていただきたい代表的な出土品です。
+</p>
+            </div>
+        </section>
+
+        <section class="travel-category-nav" aria-label="旅するOMODAKA カテゴリー移動">
+            <div class="wrap">
+                <h2 class="nav-title">他のテーマページへ</h2>
+                <div class="nav-grid">
+                    <a class="nav-item" href="01-highland-updated.html">高原スポット</a>
+                    <a class="nav-item" href="02-activity-updated.html">アクティビティ</a>
+                    <a class="nav-item" href="03-ski-skate-updated.html">スキー・スケート</a>
+                    <a class="nav-item" href="04-golf-updated.html">高原ゴルフ</a>
+                    <a class="nav-item" href="05-kiminonawa-working-updated.html">君の名は</a>
+                    <a class="nav-item" href="06-onsen-working-updated.html">日帰り温泉</a>
+                    <a class="nav-item" href="08-suwa-belief-updated.html">古代諏訪信仰</a>
+                    <a class="nav-item" href="09-food-working-updated.html">信州の食</a>
+                    <a class="nav-item" href="10-shopping-working-updated.html">ショッピング</a>
+                </div>
+                <div style="text-align:center;">
+                    <a class="nav-home" href="index.html">【旅するオモダカ】トップページに戻る</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <div class="detail-grid">
+                    <article class="detail">
+
+                        <h3>岡谷美術考古館</h3>
+                        <p>岡谷美術考古館では、岡谷市内の遺跡から出土した縄文時代から平安時代までの土器・石器などを展示しています。縄文時代は約1万6,000年前から約2,400年前まで続き、前期・中期・後期・晩期などに分けられます。岡谷の代表的な資料の多くは、今から約5,500～4,500年前の「縄文時代中期」のものです。
+                        </p>
+                        <p>中でも注目は、縄文時代中期の国指定重要文化財「顔面把手付深鉢形土器」。海戸遺跡から出土した、顔が外側を向く全国的にも珍しい土器です。ほかにも、「壺を持つ妊婦土偶」「超小型土偶」「梨久保式土器」「有孔鍔付土器」など、岡谷の縄文文化を代表する多彩な資料を見ることができます。OMODAKAから車で約6分と近距離にありますので、旅程に余裕があるときに気軽に立ち寄ることもできます。
+                        </p>
+                        <p class="meta">OMODAKAから約6分</p>
+                        <p class="source">公式情報：<a href="https://okaya-museum.jp/" target="_blank"
+                                rel="noopener">公式サイト</a></p>
+                    </article>
+                    <article class="detail">
+
+                        <h3>星ヶ塔ミュージアム 矢の根や</h3>
+                        <p>星ヶ塔ミュージアム
+                            矢の根やは、下諏訪町にある国史跡「星ヶ塔黒曜石原産地遺跡」を中心に、黒曜石と縄文人の暮らしや交易について紹介するミュージアムです。中部高地で縄文文明が栄えた背景の一つには、当時貴重だった黒曜石（天然ガラス）が豊富に産出したことがあります。特に和田峠周辺は国内最大級の黒曜石産地で、ここから産出した黒曜石は東北から東海地方まで広く運ばれていました。
+                        </p>
+                        <p>館内では、縄文時代の黒曜石採掘坑を再現した原寸大ジオラマや、町内から出土した遺物、黒曜石に触れられる展示などを見ることができます。縄文人の生活と、黒曜石を介した広域の交流を身近に感じられる施設です。OMODAKAからは車で10分程度と近いので、旅程に時間のあるときに気軽に訪問したり、諏訪大社下社参拝の後に立ち寄ることもできます。
+                        </p>
+                        <p class="meta">OMODAKAから約10分</p>
+                        <p class="source">公式情報：<a
+                                href="https://konjakukan-oideya.jp/%E7%9F%A2%E3%81%AE%E6%A0%B9%E3%82%84/"
+                                target="_blank" rel="noopener">公式サイト</a></p>
+                    </article>
+                    <article class="detail">
+
+                        <h3>諏訪市博物館</h3>
+                        <p>諏訪市博物館は、諏訪大社上社本宮のすぐ近くにある博物館で、「時間・自然・信仰」をテーマに、諏訪の歴史と人々の暮らしを紹介しています。館内では、旧石器時代の黒曜石製石器や縄文土器をはじめ、各時代の貴重な資料を展示。特に、縄文時代中期の「蛇体装飾付釣手土器」や、諏訪信仰を象徴する御柱祭・御神渡りについての展示は見どころです。
+                        </p>
+                        <p>諏訪の縄文文明から、古代・中世を経て現在に続く独特の信仰と文化がどのように育まれてきたのかを知ることができる博物館です。上社本宮の入口駐車場からもすぐ近くにありますので、上社本宮を参拝した際に、そのまま立ち寄ることができます。
+                        </p>
+                        <p class="source">公式情報：<a href="https://jomon.co/event/detail/39/" target="_blank"
+                                rel="noopener">紹介記事</a></p>
+                    </article>
+                    <article class="detail">
+
+                        <h3>尖石縄文考古館</h3>
+                        <p>尖石縄文考古館は、八ヶ岳山麓の茅野市内の縄文遺跡から出土した土器・土偶・石器など、約2,000点を展示する、中部高地縄文トレイルを代表する縄文専門の考古館です。最大の見どころは、「縄文のビーナス」と「仮面の女神」の2体の国宝土偶。いずれも茅野市内の遺跡から出土した、温暖な気候のもと縄文文化が最も栄えた中期と、その後の寒冷化によって集落や人口が減少した後期を代表する貴重な土偶です。
+                        </p>
+                        <p>また、縄文時代早期から晩期までの土器や土偶を年代順に見ることができ、温暖な気候のもとで発展した中期の華やかな土器・土偶から、寒冷化した後期の変化まで、時代とともに文様や形、造形がどのように変化していったのかを理解できます。考古館の周囲には、国の特別史跡に指定された尖石石器時代遺跡と与助尾根遺跡が広がり、縄文時代の竪穴住居も復元されています。
+                        </p>
+                        <p class="meta">OMODAKAから約35分｜9:00–16:30（2026年情報）</p>
+                        <p class="source">公式情報：<a href="https://www.city.chino.lg.jp/site/togariishi/" target="_blank"
+                                rel="noopener">公式サイト</a></p>
+
+                    </article>
+                    <article class="detail">
+
+                        <h3>井戸尻考古館</h3>
+                        <p>井戸尻考古館は、八ヶ岳西南麓に広がる井戸尻遺跡群を中心に、富士見町内で出土した縄文時代の土器や土偶、石器などを展示する考古館です。井戸尻地域は、今から約5,000年前の縄文時代中期に独自の「井戸尻文化」が花開いた地域で、蛇や蛙、また想像上の水生動物「みづち」をモチーフにした、複雑で芸術性の高い土器の造形や、土器・土偶に込められた縄文人の宗教観念や世界観を知ることができます。
+                        </p>
+                        <p>中でも注目したい代表作が、国の重要文化財に指定されている藤内遺跡出土の「神像筒形土器」です。人の姿を思わせる立体的な造形を土器の周囲に配した高さ約56cmの大型土器で、まるで宇宙服をまとった人物のようにも見える、井戸尻を代表する謎めいた造形です。もう一つの見どころが、「縄文のメドゥーサ」とも呼ばれる井戸尻遺跡の香炉形土器です。人面を思わせる造形の頭部に蛇のような文様がまとわりつくように表現されていることから、この名で呼ばれています。どちらも、縄文人が土器に込めた独特の世界観を感じさせる、井戸尻ならではの貴重な資料です。
+                        </p>
+                        <p class="meta">OMODAKAから約35分</p>
+                        <p class="source">公式情報：<a href="https://userweb.alles.or.jp/fujimi/idojiri.html" target="_blank"
+                                rel="noopener">公式サイト</a></p>
+                    </article>
+                    <article class="detail">
+
+                        <h3>八ヶ岳美術館（原村）</h3>
+                        <p>八ヶ岳美術館は、八ヶ岳西南麓の原村にある、豊かなカラマツ林に囲まれた高原の美術館です。原村出身の彫刻家・清水多嘉示の作品を中心に、絵画や書、村内の遺跡から出土した縄文土器・石器などを展示しています。原村を含む八ヶ岳西南麓は、縄文時代に多くの集落が営まれた地域で、館内では国史跡・阿久遺跡をはじめとする遺跡の出土品を見ることができます。
+                        </p>
+                        <p>縄文資料の中でも注目したいのが、前尾根遺跡から出土した「顔面装飾付釣手土器」。複雑で立体的な顔の装飾を持つ、縄文時代中期を代表する土器の一つです。また、美術館の建物そのものも大きな見どころ。日本を代表する建築家・村野藤吾が設計した、山並みを思わせる連続ドーム型の独創的な建築で、2026年には「日本におけるモダン・ムーブメントの建築312選」に選定されています。館内の美術作品とともに、建築と八ヶ岳の自然も楽しめる美術館です。
+                        </p>
+                        <p class="meta">OMODAKAから約30分</p>
+                        <p class="source">公式情報：<a href="https://yatsubi.com/culturalproperty/" target="_blank"
+                                rel="noopener">公式サイト</a></p>
+                    </article>
+                </div>
+                <div class="detail-grid">
+                    <article class="detail">
+
+                        <h3>黒耀石体験ミュージアム＋星糞峠史跡公園＋星くそ館（長和町）</h3>
+                        <p>星くずの里高山
+                            黒耀石体験ミュージアムは、国史跡・星糞峠黒曜石原産地遺跡の麓にある体験型の博物館です。この地域では、旧石器時代から約3万年にわたって黒耀石が利用されてきました。館内では、黒耀石の採掘や石器づくり、各地への流通など、その歴史と縄文人の暮らしについて学ぶことができます。
+                        </p>
+                        <p>この施設の魅力は、黒耀石を使った石器づくりやペンダントづくりなど、実際にものづくりを体験できること。さらに時間に余裕があれば、ミュージアムから徒歩約30～40分の星糞峠史跡公園まで足を延ばすことができます。ここには縄文時代の黒耀石採掘跡が残り、地表には黒耀石の割れくずが広がっています。史跡公園内の「星くそ館」では、縄文人が掘った黒耀石鉱山の跡も見学でき、黒耀石の「ふるさと」を実際に体感することができます。なお、「星くそ（星糞）」とは黒耀石の別名で、星のかけらを意味します。星糞峠周辺に星くずのように輝く黒耀石のかけらが地面に降り積もったように見えたことから、「星糞」という呼び名につながったとされています。OMODAKAからは湖北トンネル、新和田峠トンネルを抜けてすぐの場所となります。
+                        </p>
+                        <p class="meta">OMODAKAから約40分｜9:00–16:30（体験受付15:00まで）</p>
+                        <p class="source">公式情報：<a href="https://hoshikuso.jp/" target="_blank"
+                                rel="noopener">黒耀石体験ミュージアム 公式サイト</a>｜<a href="https://hoshikuso.jp/hoshikusokan/"
+                                target="_blank" rel="noopener">星くそ館</a></p>
+                    </article>
+                    <article class="detail">
+
+                        <h3>星降る中部高地の縄文世界</h3>
+                        <p>縄文文明に興味をお持ちになった方のために、八ヶ岳山麓に栄えた、長野県・山梨県の縄文文明の縄文遺跡群を詳しく解説した資料「星降る中部高地の縄文世界」を紹介します。</p>
+                        <p class="source">資料：<a href="pdf/jomon_trail_plan.pdf" target="_blank"
+                                rel="noopener">PDF資料を見る</a></p>
+                    </article>
+                </div>
+                <div class="route"><strong>おすすめコース</strong>
+                    <ul>
+                        <li>OMODAKA → 岡谷美術考古館 → 星ヶ塔ミュージアム 矢の根や → 下諏訪で蕎麦昼食 → 黒耀石体験ミュージアム → OMODAKA</li>
+                        <li>OMODAKA → 井戸尻考古館 → 蓼科美術館 → 八ヶ岳高原で昼食 → 尖石縄文考古館 → 諏訪湖観光 → OMODAKA</li>
+                    </ul>
+                </div>
+            </div>
+        </section></main>
+        <section class="travel-category-nav" aria-label="旅するOMODAKA カテゴリー移動">
+            <div class="wrap">
+                <h2 class="nav-title">他のテーマページへ</h2>
+                <div class="nav-grid">
+                    <a class="nav-item" href="01-highland-updated.html">高原スポット</a>
+                    <a class="nav-item" href="02-activity-updated.html">アクティビティ</a>
+                    <a class="nav-item" href="03-ski-skate-updated.html">スキー・スケート</a>
+                    <a class="nav-item" href="04-golf-updated.html">高原ゴルフ</a>
+                    <a class="nav-item" href="05-kiminonawa-working-updated.html">君の名は</a>
+                    <a class="nav-item" href="06-onsen-working-updated.html">日帰り温泉</a>
+                    <a class="nav-item" href="08-suwa-belief-updated.html">古代諏訪信仰</a>
+                    <a class="nav-item" href="09-food-working-updated.html">信州の食</a>
+                    <a class="nav-item" href="10-shopping-working-updated.html">ショッピング</a>
+                </div>
+                <div style="text-align:center;">
+                    <a class="nav-home" href="index.html">【旅するオモダカ】トップページに戻る</a>
+                </div>
+            </div>
+        </section>
+
+    <footer>
+        <div class="wrap">
+            OMODAKA｜一棟貸切の宿｜長野県岡谷市</div>
+    </footer>
+</body>
+
+</html>
